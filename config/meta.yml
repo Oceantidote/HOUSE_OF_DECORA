@@ -1,0 +1,5 @@
+meta_product_name: "Høuse of Decora"
+meta_title: "Høuse of Decora"
+meta_description: "Interior design, custom furniture, exceptional art"
+meta_image: "house-of-decora-meta.png" # should exist in `app/assets/images/`
+# twitter_account: "@product_twitter_account"   # required for Twitter Cards
