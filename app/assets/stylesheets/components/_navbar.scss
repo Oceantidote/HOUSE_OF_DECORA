@@ -13,9 +13,14 @@
 }
 
 .navbar-logo {
-  height: 85%;
-  @include for-phone-only {
-    height: 70%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  img {
+    height: 85%;
+    @include for-phone-only {
+      height: 70%;
+    }
   }
 }
 
