@@ -1,21 +1,21 @@
 <div class="navbar">
   <%= image_tag 'hamburger.png', id: 'navbar-toggle', class: 'navbar-hamburger' %>
-  <%= image_tag 'house-of-decora-logo.png', class: 'navbar-logo' %>
+  <%= link_to :root, class: 'navbar-logo' do %>
+    <%= image_tag 'house-of-decora-logo.png' %>
+  <% end %>
   <div class="navbar-empty"></div>
 </div>
-
 <div id="navbar-slide" class="navbar-slide-menu">
   <div class="navbar-slide-menu-close">
     <p class="no-margin">Menu</p>
     <%= image_tag 'slide-menu-close.png' %>
   </div>
-  <%= link_to 'About', '#', class: 'navbar-slide-menu-links lighter' %>
+  <%= link_to 'About', about_path, class: 'navbar-slide-menu-links lighter' %>
   <%= link_to 'Services', '#', class: 'navbar-slide-menu-links lighter' %>
   <%= link_to 'Gallery', '#', class: 'navbar-slide-menu-links lighter' %>
   <%= link_to 'Testimonials', '#', class: 'navbar-slide-menu-links lighter' %>
   <%= link_to 'Contact', '#', class: 'navbar-slide-menu-links lighter' %>
 </div>
-
 <script>
   hamburger = document.getElementById('navbar-toggle');
   navbarSlide = document.getElementById('navbar-slide');
@@ -26,7 +26,6 @@
   navbarSlideMenuClose.addEventListener('click', () => {
     navbarSlide.classList.toggle('navbar-slide-show')
   })
-
 </script>
 
 
