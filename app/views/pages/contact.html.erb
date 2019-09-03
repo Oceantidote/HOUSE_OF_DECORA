@@ -1,0 +1,33 @@
+<div class="contact-wrapper">
+  <div class="contact-sections-container">
+
+    <div class="contact-top">
+      <div class="contact-section-one contact-sections">
+        <div class="">
+          <h2 class="boldest">HOW CAN WE HELP?</h2>
+          <h2 class="boldest">DROP US AN EMAIL.</h2>
+          <p>CONTACT@HOUSEOFDECORA.COM</p>
+        </div>
+        <div class="color-block"></div>
+      </div>
+      <div class="contact-section-two contact-sections">
+        <%= image_tag 'contact-image-one' %>
+      </div>
+    </div>
+    <div class="contact-bottom">
+      <div class="contact-section-three contact-sections">
+        <%= image_tag 'contact-image-two' %>
+      </div>
+      <div class="contact-section-four contact-sections">
+        <%= form_for :contact do |f| %>
+          <%= f.text_field :full_name, label: 'Your Full name' %>
+          <%= f.text_field :email, label: 'Email Address' %>
+          <%= f.text_field :message, label: 'Message' %>
+          <%= f.file_field :picture, label: false %>
+          <%= f.submit %>
+        <% end %>
+      </div>
+    </div>
+    <%= image_tag 'contact-instagram', class: 'contact-instagram' %>
+  </div>
+</div>
