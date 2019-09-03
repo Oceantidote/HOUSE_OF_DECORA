@@ -11,7 +11,7 @@
     <%= image_tag 'slide-menu-close.png' %>
   </div>
   <%= link_to 'About', about_path, class: 'navbar-slide-menu-links lighter' %>
-  <%= link_to 'Services', '#', class: 'navbar-slide-menu-links lighter' %>
+  <%= link_to 'Services', services_path, class: 'navbar-slide-menu-links lighter' %>
   <%= link_to 'Gallery', '#', class: 'navbar-slide-menu-links lighter' %>
   <%= link_to 'Testimonials', '#', class: 'navbar-slide-menu-links lighter' %>
   <%= link_to 'Contact', '#', class: 'navbar-slide-menu-links lighter' %>
@@ -27,16 +27,6 @@
     navbarSlide.classList.toggle('navbar-slide-show')
   })
 </script>
-
-
-
-
-
-
-
-
-
-
 
 <!-- <div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
   <%#= link_to "#", class: "navbar-brand" do %>
