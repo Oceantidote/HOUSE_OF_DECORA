@@ -1,0 +1,93 @@
+<div class="about-container">
+  <div class="about-carousel">
+    <div class="about-carousel-image-holder">
+      <!-- Stack all carousel images here and change opacity on click -->
+      <%= image_tag "about-image-one.png", alt: "House of Decora About", class: "about-carousel-image", id:"about-image-1"%>
+      <%= image_tag "contact-image-one.jpg", alt: "House of Decora About", class: "about-carousel-image faded", id:"about-image-2"%>
+      <%= image_tag "contact-image-two.jpg", alt: "House of Decora About", class: "about-carousel-image faded", id:"about-image-3"%>
+      <%= image_tag "services-banner-one.jpg", alt: "House of Decora About", class: "about-carousel-image faded", id:"about-image-4"%>
+      <p class="about-carousel-image-number source-sans light-grey" id="photo-number"></p>
+    </div>
+    <div class="about-carosuel-text">
+      <h1 class="prata black py-4">Øur Practice</h1>
+      <p class="source-sans black py-4" id="about-para-one"></p>
+      <div class="text-divider my-4"></div>
+      <h1 class="prata black py-4">Øur Skill</h1>
+      <p class="source-sans black py-4" id="about-para-two"></p>
+      <div class="text-divider my-4"></div>
+    </div>
+    <div class="about-carosuel-controls-holder">
+      <div class="about-carosuel-controls">
+        <div class="about-carousel-button carousel-button-up" id="up">
+          <%= image_tag "arrow.png", alt: "House of Decora up arrow", class: "arrow-up" %>
+        </div>
+        <div class="about-carousel-button carousel-button-down" id="down">
+          <%= image_tag "arrow.png", alt: "House of Decora up arrow", class: "arrow-down" %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+  const up = document.getElementById("up")
+  const down = document.getElementById("down")
+  const para1 = document.getElementById("about-para-one")
+  const para2 = document.getElementById("about-para-two")
+  const image = document.getElementById("about-image")
+  const imageNumber = document.getElementById("photo-number")
+  const images = document.querySelectorAll(".about-carousel-image")
+
+  document.addEventListener('DOMContentLoaded', () => {
+    para1.innerHTML = firstParagraphs[0]
+    para2.innerHTML = secondParagraphs[0]
+    imageNumber.innerHTML = "01"
+  })
+
+  up.addEventListener("click", () => {
+    if(Number(imageNumber.innerHTML < 4)) {
+      const activeImage = [...images].filter(i => i.classList.length == 1)
+      const activeImageIndex = [...images].indexOf(activeImage[0])
+      activeImage[0].classList.add('faded')
+      images[activeImageIndex+1].classList.remove("faded")
+      imageNumber.innerHTML = `0${(Number(imageNumber.innerHTML) + 1).toString()}`
+      const index1 = firstParagraphs.indexOf(para1.innerHTML)
+      const index2 = secondParagraphs.indexOf(para2.innerHTML)
+      para1.innerHTML = firstParagraphs[index1+1]
+      if(para1.innerHTML == "undefined") {
+        para1.innerHTML = firstParagraphs[0]
+      }
+      para2.innerHTML = secondParagraphs[index2+1]
+      if(para2.innerHTML == "undefined") {
+        para2.innerHTML = secondParagraphs[0]
+      }
+    }
+  })
+
+  down.addEventListener("click", () => {
+    if(Number(imageNumber.innerHTML > 1)) {
+      const activeImage = [...images].filter(i => i.classList.length == 1)
+      const activeImageIndex = [...images].indexOf(activeImage[0])
+      activeImage[0].classList.add('faded')
+      images[activeImageIndex-1].classList.remove("faded")
+      imageNumber.innerHTML = `0${(Number(imageNumber.innerHTML) - 1).toString()}`
+      const index1 = firstParagraphs.indexOf(para1.innerHTML)
+      const index2 = secondParagraphs.indexOf(para2.innerHTML)
+      para1.innerHTML = firstParagraphs[index1-1]
+      if(para1.innerHTML == "undefined") {
+        para1.innerHTML = firstParagraphs[3]
+      }
+      para2.innerHTML = secondParagraphs[index2+1]
+      if(para2.innerHTML == "undefined") {
+        para2.innerHTML = secondParagraphs[0]
+      }
+    }
+  })
+
+
+  const firstParagraphs = ["There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text.", "dekndkejblbdj,e  some form, by injected humour, or randomised words which don't look even slightly believable. If you are godejnding to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrasdlkensing hidden in the middle of text.", "I am so also some text that needs to be displayed", "Moi aussi monsueir"]
+
+  const secondParagraphs = ["dekndkejblbdj,e  some form, by injected humour, or randomised words which don't look even slightly believable. If you are godejnding to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrasdlkensing hidden in the middle of text.", "I am so also some text that needs to be displayed", "Moi aussi monsueir", "There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text."]
+
+
+</script>
