@@ -19,12 +19,26 @@
         <%= image_tag 'contact-image-two' %>
       </div>
       <div class="contact-section-four contact-sections">
-        <%= form_for :contact do |f| %>
-          <%= f.text_field :full_name, label: 'Your Full name' %>
-          <%= f.text_field :email, label: 'Email Address' %>
-          <%= f.text_field :message, label: 'Message' %>
-          <%= f.file_field :picture, label: false %>
-          <%= f.submit %>
+        <%= form_for :send_email, url: send_email_path, html: { class: 'contact-form' } do |f| %>
+          <div class="contact-form-inputs-container">
+            <p class="no-margin">Your Full Name</p>
+            <%= f.text_field :full_name, class: 'contact-form-inputs' %>
+            <p class="no-margin">Email Address</p>
+            <%= f.text_field :email, class: 'contact-form-inputs' %>
+            <p class="no-margin">Message</p>
+            <%= f.text_field :message, class: 'contact-form-inputs' %>
+          </div>
+          <div class="contact-form-buttons-container">
+              <%= f.label :file, class: 'contact-form-button-left' do %>
+                <%= image_tag 'arrow-up.png' %>
+                <h2 class="no-margin lighter">UPLOAD FILE</h2>
+              <% end %>
+              <%= f.file_field :file, class: 'd-none' %>
+            <%= f.button class: 'contact-form-button-right' do %>
+              <h2 class="no-margin lighter">SUBMIT</h2>
+              <%= image_tag 'arrow-right.png' %>
+            <% end %>
+          </div>
         <% end %>
       </div>
     </div>
