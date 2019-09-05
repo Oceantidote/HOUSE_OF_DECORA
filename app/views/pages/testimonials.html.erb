@@ -1,0 +1,126 @@
+<div class="testimonials-container">
+  <div class="testimonials-carousel">
+    <div class="testimonials-left-side">
+      <%= image_tag "testimonial-image-one.png", alt: "House of Decora Testimonials", class: "testimonials-image" %>
+      <%= image_tag "about-image-one.png", alt: "House of Decora Testimonials", class: "testimonials-image faded" %>
+      <%= image_tag "testimonial-image-one.png", alt: "House of Decora Testimonials", class: "testimonials-image faded" %>
+      <%= image_tag "about-image-one.png", alt: "House of Decora Testimonials", class: "testimonials-image faded" %>
+      <div class="testimonials-carousel-tracker"></div>
+      <div class="testimonials-image-text-holder">
+        <p class="testimonial-image-number source-sans" id="photo-number">01</p>
+        <h1 class="testimonials-image-text source-sans black py-3" id="photo-text">I absolutely love what they have created. Remarkable show of talent and creativity.</h1>
+        <div class="large-text-divider"></div>
+      </div>
+    </div>
+    <div class="testimonials-right-side">
+      <div class="testimonials-text-holder">
+        <div class="client-reviews source-sans white pb-5">
+          <div class="client-reviews-circle"></div>
+          <p class="client-reviews-text source-sans white"><strong>Client </strong> Reviews</p>
+        </div>
+        <h1 class="testimonials-text source-sans white py-5"><strong>Our clients believe in what we do.</strong>  Here’s what some of them have to say.</h1>
+        <div class="large-text-divider-white mt-5"></div>
+      </div>
+      <div class="testimonial-carousel-controls-holder">
+        <div class="testimonial-owner">
+          <div id="owner">
+            <p class="testimonial-owner-text source-sans white" id="owner-name">Imogen Potts,</p>
+            <p class="testimonial-owner-text source-sans white" id="owner-job"><em>artist</em></p>
+          </div>
+        </div>
+        <div class="next-testimonial-button" id="next">
+          <div class="next-testimonial-button-content" id="content">
+            <p class="next-testimonial-text source-sans black">Next Testimonial</p>
+            <%= image_tag "weird-arrow.png", alt: "House of Decora up arrow", class: "weird-arrow" %>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+  const nextBtn = document.getElementById("next")
+  const btnContent = document.getElementById('content')
+  const owner = document.getElementById('owner')
+  const name = document.getElementById('owner-name')
+  const job = document.getElementById('owner-job')
+  const images = document.querySelectorAll(".testimonials-image")
+  const photoNum = document.getElementById('photo-number')
+  const photoText = document.getElementById('photo-text')
+
+  nextBtn.addEventListener('click', () => {
+    btnContent.classList.add('clicked');
+    setTimeout(function () {
+      btnContent.classList.remove('clicked');
+    }, 150);
+    owner.classList.add('swipe-right');
+    owner.classList.add('testimonial-fade');
+    setTimeout(function () {
+      owner.classList.remove('swipe-right');
+    }, 500);
+    setTimeout(function () {
+      photoText.classList.add('swipe-right');
+      photoText.classList.add('testimonial-fade');
+    }, 800);
+    setTimeout(function () {
+      photoText.classList.remove('swipe-right');
+    }, 1000)
+    setTimeout(function () {
+      changeImage();
+      changeOwner();
+      changeNum()
+      owner.classList.remove('testimonial-fade');
+    }, 1500);
+    setTimeout(function () {
+      changeText();
+      photoText.classList.remove('testimonial-fade');
+    }, 2800);
+  })
+
+  const changeImage = () => {
+    const activeImage = [...images].filter(i => i.classList.length == 1);
+    const activeImageIndex = [...images].indexOf(activeImage[0]);
+    activeImage[0].classList.add('faded');
+    if(activeImageIndex + 1 <= [...images].length -1) {
+      images[activeImageIndex+1].classList.remove("faded")
+    } else {
+      images[0].classList.remove("faded")
+    }
+  }
+
+  const changeNum = () => {
+    if(Number(photoNum.innerHTML < 4)) {
+      photoNum.innerHTML = `0${(Number(photoNum.innerHTML) + 1).toString()}`
+    } else {
+      photoNum.innerHTML = `01`
+    }
+  }
+
+  const changeText = () => {
+    const textIndex = testimonialTexts.indexOf(photoText.innerHTML)
+    if(textIndex + 1 <= testimonialTexts.length - 1) {
+      photoText.innerHTML = testimonialTexts[textIndex + 1]
+    } else {
+      photoText.innerHTML = testimonialTexts[0]
+    }
+  }
+
+  const changeOwner = () => {
+    const nameIndex = testimonialOwners.indexOf(name.innerHTML)
+    const jobIndex = testimonialJobs.indexOf(job.innerHTML)
+    if(nameIndex + 1 <= testimonialOwners.length - 1) {
+      name.innerHTML = testimonialOwners[nameIndex + 1]
+      job.innerHTML = testimonialJobs[nameIndex + 1]
+    } else {
+      name.innerHTML = testimonialOwners[0]
+      job.innerHTML = testimonialJobs[0]
+    }
+  }
+
+  const testimonialTexts = ["I absolutely love what they have created. Remarkable show of talent and creativity.", "I absolutely love what they have created. Remarkable show of talent and creativity.", "I absolutely love what they have created. Remarkable show of talent and creativity.", "I absolutely love what they have created. Remarkable show of talent and creativity."]
+
+  const testimonialOwners = ["Imogen Potts,", "Alice Tatton-Brown,", "Sam Ricotta,", "Philippa Smith,"]
+
+  const testimonialJobs = ["artist", "model", "developer", "managing director"]
+</script>

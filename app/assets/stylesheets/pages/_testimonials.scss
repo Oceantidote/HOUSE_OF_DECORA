@@ -1,0 +1,184 @@
+.testimonials-container {
+  display: flex;
+  width: 100vw;
+  justify-content: center;
+  align-items: center;
+  padding: 50px 0;
+}
+
+.testimonials-carousel {
+  display: flex;
+  height: 750px;
+  width: 90vw;
+}
+
+.testimonials-left-side {
+  position: relative;
+  width: 50%;
+}
+
+.testimonials-image {
+  height: 750px;
+  width: 100%;
+  object-fit: cover;
+  object-position: center;
+  position: absolute;
+  opacity: 0.4;
+  transition: opacity 1s;
+}
+
+.testimonials-carousel-tracker {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+}
+
+.testimonials-image-text-holder {
+  position: absolute;
+  bottom: 40px;
+  left: 40px;
+  width: 60%;
+}
+
+.testimonial-image-number {
+  font-size: 65px;
+  margin: 0;
+  line-height: 65px;
+  font-weight: lighter;
+  color: #D2D2D2;
+}
+
+.testimonials-image-text {
+  font-size: 22px;
+  font-weight: lighter;
+  position: relative;
+  left: 0;
+  transition: left 1s, opacity 0.3s;
+}
+
+// ********* Right Side *************
+
+.testimonials-right-side {
+  width: 50%;
+}
+
+.testimonials-text-holder {
+  position: relative;
+  height: 500px;
+  background-color: #EBD8D0;
+  padding: 20px 50px;
+}
+
+.client-reviews-circle {
+  height: 18px;
+  width: 18px;
+  border-radius: 50%;
+  border: 2px solid #fff;
+  background-color: #EBD8D0;
+  margin-right: 15px;
+}
+
+.client-reviews {
+  display: flex;
+  align-items: center;
+}
+
+.client-reviews-text {
+  font-size: 22px;
+  font-weight: lighter;
+  margin: 0;
+}
+
+.testimonials-text {
+  font-size: 38px;
+  font-weight: lighter;
+}
+
+.large-text-divider-white {
+  width: 40px;
+  height: 2px;
+  background-color: #fff;
+}
+
+.large-text-divider {
+  width: 40px;
+  height: 2px;
+  background-color: #23242E;
+}
+
+.testimonial-carousel-controls-holder {
+  display: flex;
+  width: 100%;
+}
+
+.testimonial-owner {
+  width: 50%;
+  height: 250px;
+  background-color: #23242E;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#owner {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  left: 0;
+  transition: left 1s, opacity 0.3s;
+}
+
+.testimonial-owner-text {
+  font-weight: lighter;
+  font-size: 22px;
+  width: 80%;
+  text-align: center;
+  margin: 0;
+}
+
+.next-testimonial-button {
+  width: 50%;
+  height: 250px;
+  background-color: #F5F5F5;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.next-testimonial-button-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  transform: scale(1);
+  transition: .15s;
+}
+
+.next-testimonial-text {
+  font-weight: lighter;
+  font-size: 22px;
+}
+
+.weird-arrow {
+  height: 50px;
+}
+
+// ******** Dyanamic JS classes ********
+
+.clicked {
+  transform: scale(0.9);
+}
+
+.swipe-right {
+  left: 50vw !important;
+}
+
+.testimonial-fade {
+  opacity: 0;
+}
+
+
