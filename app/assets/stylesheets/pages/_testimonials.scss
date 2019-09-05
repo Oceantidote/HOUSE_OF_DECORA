@@ -4,17 +4,28 @@
   justify-content: center;
   align-items: center;
   padding: 50px 0;
+  @include for-small-devices-down {
+    padding: 20px 0;
+  }
 }
 
 .testimonials-carousel {
   display: flex;
   height: 750px;
   width: 90vw;
+  @include for-small-devices-down {
+    flex-direction: column;
+    height: auto;
+  }
 }
 
 .testimonials-left-side {
   position: relative;
   width: 50%;
+  @include for-small-devices-down {
+    width: 100%;
+    height: 320px;
+  }
 }
 
 .testimonials-image {
@@ -25,6 +36,9 @@
   position: absolute;
   opacity: 0.4;
   transition: opacity 1s;
+  @include for-small-devices-down {
+    height: 320px;
+  }
 }
 
 .testimonials-carousel-tracker {
@@ -38,6 +52,10 @@
   bottom: 40px;
   left: 40px;
   width: 60%;
+  @include for-small-devices-down {
+    left: 10%;
+    width: 80%;
+  }
 }
 
 .testimonial-image-number {
@@ -46,6 +64,10 @@
   line-height: 65px;
   font-weight: lighter;
   color: #D2D2D2;
+  @include for-small-devices-down {
+    font-size: 40px;
+    line-height: 40px;
+  }
 }
 
 .testimonials-image-text {
@@ -54,12 +76,20 @@
   position: relative;
   left: 0;
   transition: left 1s, opacity 0.3s;
+  @include for-small-devices-down {
+    font-size: 16px;
+  }
 }
 
 // ********* Right Side *************
 
 .testimonials-right-side {
   width: 50%;
+  display: flex;
+  flex-direction: column;
+  @include for-small-devices-down {
+    width: 100%;
+  }
 }
 
 .testimonials-text-holder {
@@ -67,6 +97,10 @@
   height: 500px;
   background-color: #EBD8D0;
   padding: 20px 50px;
+  @include for-small-devices-down {
+    order: 2;
+    height: auto;
+  }
 }
 
 .client-reviews-circle {
@@ -92,6 +126,9 @@
 .testimonials-text {
   font-size: 38px;
   font-weight: lighter;
+  @include for-small-devices-down {
+    font-size: 22px;
+  }
 }
 
 .large-text-divider-white {
@@ -109,6 +146,9 @@
 .testimonial-carousel-controls-holder {
   display: flex;
   width: 100%;
+  @include for-small-devices-down {
+    order: 1;
+  }
 }
 
 .testimonial-owner {
@@ -118,6 +158,9 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  @include for-small-devices-down {
+    height: 150px;
+  }
 }
 
 #owner {
@@ -137,6 +180,9 @@
   width: 80%;
   text-align: center;
   margin: 0;
+  @include for-small-devices-down {
+    font-size: 14px;
+  }
 }
 
 .next-testimonial-button {
@@ -147,6 +193,9 @@
   align-items: center;
   justify-content: center;
   cursor: pointer;
+  @include for-small-devices-down {
+    height: 150px;
+  }
 }
 
 .next-testimonial-button-content {
@@ -161,10 +210,39 @@
 .next-testimonial-text {
   font-weight: lighter;
   font-size: 22px;
+  @include for-small-devices-down {
+    font-size: 14px;
+  }
 }
 
 .weird-arrow {
   height: 50px;
+  @include for-small-devices-down {
+    height: 25px;
+  }
+}
+
+.rpb-5 {
+  padding-bottom: 3rem !important;
+  @include for-small-devices-down {
+    padding-bottom: 1.5rem !important;
+  }
+}
+
+.rpy-5 {
+  padding-bottom: 3rem !important;
+  padding-top: 3rem !important;
+  @include for-small-devices-down {
+    padding-bottom: 1.5rem !important;
+  padding-top: 1.5rem !important;
+  }
+}
+
+.rmt-5 {
+  margin-top: 3rem !important;
+  @include for-small-devices-down {
+    margin-top: 1.5rem !important;
+  }
 }
 
 // ******** Dyanamic JS classes ********
