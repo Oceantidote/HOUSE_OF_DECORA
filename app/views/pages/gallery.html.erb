@@ -1,32 +1,178 @@
 <div class="gallery-container">
   <div class="gallery-carousel">
     <div class="gallery-text">
-      <p class="source-sans black lighter">Living Room #marbel counters # floriane wood floors #roche bobois </p>
+      <p class="source-sans black lighter" id="gallery-title">Living Room #marbel counters # floriane wood floors #roche bobois</p>
     </div>
     <div class="gallery-image-holder">
       <%= image_tag "gallery-image-one.png", alt: "House of Decora Gallery", class: "gallery-image" %>
+      <%= image_tag "contact-image-one.jpg", alt: "House of Decora Gallery", class: "gallery-image faded" %>
+      <%= image_tag "contact-image-two.jpg", alt: "House of Decora Gallery", class: "gallery-image faded" %>
+      <%= image_tag "homepage-image.jpg", alt: "House of Decora Gallery", class: "gallery-image faded" %>
     </div>
     <div class="gallery-carousel-controls">
-      <div class="gallery-button">
+      <div class="gallery-button" id="left">
         <%= image_tag "arrow-head.png", alt: "House of Decora Gallery Button", class: "gallery-left-arrow" %>
       </div>
       <div class="gallery-mini-carousel">
         <div class="mini-carousel-item mini-carousel-one">
-          <p class="source-sans black mini-carousel-text">New Decko Upholstery Design</p>
-          <p class="source-sans black mini-carousel-text">Miami, FL</p>
+          <div class="mini-carousel-text-holder">
+            <p class="source-sans black mini-carousel-text" id="left-item-text">Fanning House balcony</p>
+            <p class="source-sans black mini-carousel-text lighter hod-grey" id="left-item-location">Surrey, UK</p>
+          </div>
         </div>
-        <div class="mini-carousel-item mini-carousel-two">
-          <p class="source-sans black mini-carousel-text">New Decko Upholstery Design</p>
-          <p class="source-sans black mini-carousel-text">Miami, FL</p>
+        <div class="mini-carousel-item mini-carousel-two mini-carousel-active">
+          <div class="mini-carousel-text-holder">
+            <p class="source-sans black mini-carousel-text" id="center-item-text">Marble Living Room</p>
+            <p class="source-sans black mini-carousel-text lighter hod-grey" id="center-item-location">Miami, FL</p>
+          </div>
         </div>
-        <div class="mini-carousel-item mini-carousel-three mini-carousel-active">
-          <p class="source-sans black mini-carousel-text">New Decko Upholstery Design</p>
-          <p class="source-sans black mini-carousel-text">Miami, FL</p>
+        <div class="mini-carousel-item mini-carousel-three">
+          <div class="mini-carousel-text-holder">
+            <p class="source-sans black mini-carousel-text" id="right-item-text">Kitchen w/ floriane wood</p>
+            <p class="source-sans black mini-carousel-text lighter hod-grey" id="right-item-location">Orlando, FL</p>
+          </div>
         </div>
       </div>
-      <div class="gallery-button">
+      <div class="gallery-button" id="right">
         <%= image_tag "arrow-head.png", alt: "House of Decora Gallery Button", class: "gallery-right-arrow" %>
       </div>
     </div>
   </div>
 </div>
+
+<script>
+  const left = document.getElementById('left');
+  const right = document.getElementById('right');
+  const images = document.querySelectorAll(".gallery-image")
+  const leftText = document.getElementById('left-item-text');
+  const leftLoc = document.getElementById('left-item-location');
+  const centerText = document.getElementById('center-item-text');
+  const centerLoc = document.getElementById('center-item-location');
+  const rightText = document.getElementById('right-item-text');
+  const rightLoc = document.getElementById('right-item-location');
+  const galleryTitle = document.getElementById('gallery-title');
+  const carouselText = [leftText, leftLoc, centerText, centerLoc, rightText, rightLoc]
+
+
+  right.addEventListener('click', () => {
+    incrementImage()
+    incrementTitle()
+    carouselRight()
+  })
+
+  left.addEventListener('click', () => {
+    decrementImage()
+    decrementTitle()
+    carouselLeft()
+  })
+
+  const incrementTitle = () => {
+    galleryTitle.classList.add('faded')
+    const activeTitleIndex = galleryTitles.indexOf(galleryTitle.innerHTML)
+    if(activeTitleIndex + 1 <= galleryTitles.length -1) {
+      galleryTitle.innerHTML = galleryTitles[activeTitleIndex + 1]
+      galleryTitle.classList.remove('faded')
+    } else {
+      galleryTitle.innerHTML = galleryTitles[0]
+      galleryTitle.classList.remove('faded')
+    }
+  }
+
+  const decrementTitle = () => {
+    galleryTitle.classList.add('faded')
+    const activeTitleIndex = galleryTitles.indexOf(galleryTitle.innerHTML)
+    if(activeTitleIndex - 1 >= 0) {
+      galleryTitle.innerHTML = galleryTitles[activeTitleIndex - 1]
+      galleryTitle.classList.remove('faded')
+    } else {
+      galleryTitle.innerHTML = galleryTitles[galleryTitles.length - 1]
+      galleryTitle.classList.remove('faded')
+    }
+  }
+
+  const carouselLeft = () => {
+    carouselText.forEach( i => i.classList.add('gallery-swipe-right', 'testimonial-fade'))
+    const leftTextIndex = galleryTexts.indexOf(leftText.innerHTML)
+    const centerTextIndex = galleryTexts.indexOf(centerText.innerHTML)
+    const rightTextIndex = galleryTexts.indexOf(rightText.innerHTML)
+    setTimeout(function () {
+      carouselText.forEach( i => i.classList.remove('gallery-swipe-right'))
+      if(leftTextIndex - 1 < 0 ) {
+        leftText.innerHTML = galleryTexts[galleryTexts.length -1]
+      } else {
+        leftText.innerHTML = galleryTexts[leftTextIndex - 1]
+      }
+      if(centerTextIndex - 1 < 0 ) {
+        centerText.innerHTML = galleryTexts[galleryTexts.length -1]
+      } else {
+        centerText.innerHTML = galleryTexts[centerTextIndex - 1]
+      }
+      if(rightTextIndex - 1 < 0 ) {
+        rightText.innerHTML = galleryTexts[galleryTexts.length -1]
+      } else {
+        rightText.innerHTML = galleryTexts[rightTextIndex - 1]
+      }
+    }, 300)
+    setTimeout(function () {
+      carouselText.forEach( i => i.classList.remove('testimonial-fade'))
+    }, 1000)
+  }
+
+  const carouselRight = () => {
+    carouselText.forEach( i => i.classList.add('gallery-swipe-left', 'testimonial-fade'))
+    const leftTextIndex = galleryTexts.indexOf(leftText.innerHTML)
+    const centerTextIndex = galleryTexts.indexOf(centerText.innerHTML)
+    const rightTextIndex = galleryTexts.indexOf(rightText.innerHTML)
+    setTimeout(function () {
+      carouselText.forEach( i => i.classList.remove('gallery-swipe-left'))
+      if(leftTextIndex + 1 > galleryTexts.length -1 ) {
+        leftText.innerHTML = galleryTexts[0]
+      } else {
+        leftText.innerHTML = galleryTexts[leftTextIndex + 1]
+      }
+      if(centerTextIndex + 1 > galleryTexts.length -1 ) {
+        centerText.innerHTML = galleryTexts[0]
+      } else {
+        centerText.innerHTML = galleryTexts[centerTextIndex + 1]
+      }
+      if(rightTextIndex + 1 > galleryTexts.length -1 ) {
+        rightText.innerHTML = galleryTexts[0]
+      } else {
+        rightText.innerHTML = galleryTexts[rightTextIndex + 1]
+      }
+    }, 300)
+    setTimeout(function () {
+      carouselText.forEach( i => i.classList.remove('testimonial-fade'))
+    }, 1000)
+  }
+
+  const incrementImage = () => {
+    const activeImage = [...images].filter(i => i.classList.length == 1)
+    const activeImageIndex = [...images].indexOf(activeImage[0])
+    activeImage[0].classList.add('faded')
+    if(activeImageIndex + 1 <= [...images].length -1) {
+      images[activeImageIndex+1].classList.remove("faded")
+    } else {
+      images[0].classList.remove("faded")
+    }
+  }
+
+  const decrementImage = () => {
+    const activeImage = [...images].filter(i => i.classList.length == 1)
+    const activeImageIndex = [...images].indexOf(activeImage[0])
+    activeImage[0].classList.add('faded')
+    if(activeImageIndex - 1 >= 0) {
+      images[activeImageIndex - 1].classList.remove("faded")
+    } else {
+      images[[...images].length -1].classList.remove("faded")
+    }
+  }
+
+  const galleryTitles = ["Living Room #marbel counters # floriane wood floors #roche bobois", "Kitchen in FloRida house # floriane wood floors", "Salad bar in Naples #roche bobois", "Balcony in Surrey #marbel counters"]
+
+  const galleryTexts = ["Marble Living Room", "Kitchen w/ floriane wood", "New Wave Salad Bar", "Fanning House balcony"]
+
+  const galleryLocations = ["Miami, FL", "Orlando, FL", "Naples, IT", "Surrey, UK"]
+
+
+</script>
