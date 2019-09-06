@@ -10,10 +10,19 @@
   width: 90vw;
 }
 
-.gallery-image {
+.gallery-image-holder {
   width: 100%;
   height: 500px;
+}
+
+.gallery-image {
+  width: 90vw;
+  height: 500px;
+  // Width/height 100% not applying here 🤷‍♂️
   object-fit: cover;
+  position: absolute;
+  opacity: 1;
+  transition: opacity 3s;
 }
 
 .gallery-carousel-controls {
@@ -25,10 +34,11 @@
 
 .gallery-mini-carousel {
   display: flex;
+  width: 72%;
 }
 
 .mini-carousel-item {
-  width: 200px;
+  width: 33.33%;
   height: 150px;
   display: flex;
   justify-content: center;
@@ -43,28 +53,50 @@
   }
 }
 
+.mini-carousel-text-holder {
+  width: 60%;
+}
+
 .mini-carousel-text {
-  font-weight: lighter;
-  font-size: 16px;
+  font-size: 12px;
   width: 80%;
   margin-bottom: 8px;
   line-height: 20px;
+  position: relative;
+  left: 0;
+  transition: left 1s, opacity 0.3s ;
 }
 
 .gallery-button {
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 200px;
+  width: 14%;
   height: 150px;
   cursor: pointer;
 }
 
 .gallery-left-arrow {
+  transform: rotate(180deg);
   height: 25px;
 }
 
 .gallery-right-arrow {
-  transform: rotate(180deg);
   height: 25px;
 }
+
+.gallery-avatar {
+  height: 30px;
+  width: 30px;
+  object-fit: cover;
+  border-radius: 50%;
+}
+
+.gallery-swipe-right {
+  left: 10vw !important;
+}
+
+.gallery-swipe-left {
+  left: -10vw !important;
+}
+
