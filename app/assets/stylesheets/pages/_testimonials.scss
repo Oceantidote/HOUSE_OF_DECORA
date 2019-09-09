@@ -71,13 +71,13 @@
 }
 
 .testimonials-image-text {
-  font-size: 22px;
+  font-size: 18px;
   font-weight: lighter;
   position: relative;
   left: 0;
   transition: left 1s, opacity 0.3s;
   @include for-small-devices-down {
-    font-size: 16px;
+    font-size: 12px;
   }
 }
 
@@ -118,7 +118,7 @@
 }
 
 .client-reviews-text {
-  font-size: 22px;
+  font-size: 18px;
   font-weight: lighter;
   margin: 0;
 }
@@ -176,7 +176,7 @@
 
 .testimonial-owner-text {
   font-weight: lighter;
-  font-size: 22px;
+  font-size: 18px;
   width: 80%;
   text-align: center;
   margin: 0;
@@ -209,7 +209,7 @@
 
 .next-testimonial-text {
   font-weight: lighter;
-  font-size: 22px;
+  font-size: 18px;
   @include for-small-devices-down {
     font-size: 14px;
   }

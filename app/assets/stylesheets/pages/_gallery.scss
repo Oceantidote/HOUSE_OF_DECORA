@@ -91,7 +91,7 @@
 }
 
 .mini-carousel-text {
-  font-size: 12px;
+  font-size: 14px;
   width: 80%;
   margin-bottom: 8px;
   line-height: 20px;
@@ -99,7 +99,7 @@
   left: 0;
   transition: left 1s, opacity 0.3s ;
   @include for-small-devices-down {
-    font-size: 10px;
+    font-size: 12px;
   }
 }
 

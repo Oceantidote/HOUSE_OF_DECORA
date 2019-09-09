@@ -3,6 +3,9 @@
   background: #23242E;
   justify-content: space-between;
   align-items: center;
+  position: fixed;
+  z-index: 5;
+  width: 100%;
 }
 
 .navbar-hamburger {
@@ -36,6 +39,7 @@
   box-shadow: 0 0 4px rgba(0,0,0,0.2);
   position: fixed;
   z-index: 10;
+  top: 50px;
   left: -250px;
   transition: left 0.7s ease;
   a:hover {
@@ -53,6 +57,9 @@
   color: #353535;
   padding: 15px;
   border-bottom: 1px solid #E1E1E1;
+  &:hover {
+    background: #E2E2E2;
+  }
 }
 
 .navbar-slide-menu-close {

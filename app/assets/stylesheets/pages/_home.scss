@@ -32,3 +32,16 @@
     display: block;
   }
 }
+
+.hod-flash {
+  background: #23242E;
+  color: white;
+  border: none;
+  border-radius: 0;
+  button:hover {
+    color: #fff;
+  }
+  span:hover {
+    color: #fff;
+  }
+}
