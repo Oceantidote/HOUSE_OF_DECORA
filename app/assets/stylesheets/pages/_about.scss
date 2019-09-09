@@ -120,7 +120,7 @@
   @include for-small-devices-down {
     transform: rotate(90deg);
     margin-top: 0px;
-    margin-right: 20px;
+    margin-right: 18%;
   }
 }
 
@@ -132,7 +132,7 @@
   @include for-small-devices-down {
     transform: rotate(270deg);
     margin-bottom: 0px;
-    margin-right: 82%;
+    margin-right: 77%;
     align-self: auto;
   }
 }
@@ -149,4 +149,18 @@
 
 .fadeOut {
   opacity: 0;
+}
+
+.arrow-web {
+  @include for-small-devices-down {
+    display: none;
+  }
+}
+
+.arrow-mobile {
+    height: auto !important;
+    width: 7% !important;
+  @include for-medium-devices-up {
+    display: none;
+  }
 }

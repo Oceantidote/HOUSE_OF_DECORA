@@ -1,0 +1,14 @@
+<style>
+  .email-banner {
+  height: 100px;
+  background: #23242E;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+</style>
+<div class="email-banner">
+</div>
+<h1>From: <%= @contacts[:name] %></h1>
+<h3>Email: <%= @contacts[:email] %></h3>
+<p><%= @contacts[:message] %></p>

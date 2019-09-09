@@ -145,9 +145,13 @@
       font-size: 17px;
     }
   }
+  img {
+    height: 30px;
+  }
   @include for-phone-only {
     padding: 0 15px;
   }
+
 }
 
 .contact-form-button-right {
@@ -168,6 +172,9 @@
     @include for-medium-devices-down {
       font-size: 17px;
     }
+  }
+  img {
+    height: 13px;
   }
   @include for-phone-only {
     padding: 0 15px;
