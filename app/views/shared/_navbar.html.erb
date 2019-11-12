@@ -1,7 +1,8 @@
-<div class="navbar">
+<!-- <div class="navbar">
+  <span class="border-top"></span>
   <%= image_tag 'hamburger.png', id: 'navbar-toggle', class: 'navbar-hamburger' %>
   <%= link_to :root, class: 'navbar-logo' do %>
-    <%= image_tag 'house-of-decora-logo.png' %>
+    <h1 class="navbar-title">House of Decora</h1>
   <% end %>
   <div class="navbar-empty"></div>
 </div>
@@ -27,40 +28,22 @@
     navbarSlide.classList.toggle('navbar-slide-show')
   })
 </script>
+ -->
 
-<!-- <div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
-  <%#= link_to "#", class: "navbar-brand" do %>
-    <%#= image_tag "https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/logo.png" %>
-    <%# end %>
-
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button>
-
-
-  <div class="collapse navbar-collapse" id="navbarSupportedContent">
-    <ul class="navbar-nav mr-auto">
-      <%# if user_signed_in? %>
-        <li class="nav-item active">
-          <%#= link_to "Home", "#", class: "nav-link" %>
-        </li>
-        <li class="nav-item">
-          <%#= link_to "Messages", "#", class: "nav-link" %>
-        </li>
-        <li class="nav-item dropdown">
-          <%#= image_tag "https://kitt.lewagon.com/placeholder/users/ssaunier", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
-          <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-            <%#= link_to "Action", "#", class: "dropdown-item" %>
-            <%#= link_to "Another action", "#", class: "dropdown-item" %>
-            <%#= link_to "Log out", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
-          </div>
-        </li>
-      <%# else %>
-        <li class="nav-item">
-          <%#= link_to "Login", new_user_session_path, class: "nav-link" %>
-        </li>
-      <%# end %>
-    </ul>
+<div class="navbar">
+  <span class="border-top"></span>
+  <div class="navbar_elements">
+    <%#= image_tag 'hamburger.png', id: 'navbar-toggle', class: 'navbar-hamburger' %>
+    <a href="/" class="navbar_title">House of Decora</a>
+<!--     <div class="navbar-empty"></div> -->
+  </div>
+  <div class="navbar_links">
+    <a href="/">INTERIORS</a>
+    <a href="/">THE STUDIO</a>
+    <a href="/">DECOR</a>
+    <a href="/">LIGHTNING</a>
+    <a href="/">FURNITURE</a>
+    <a href="/">CONTACT</a>
+    <a href="/" style="font-weight: 700;">SHOP</a>
   </div>
 </div>
- -->
